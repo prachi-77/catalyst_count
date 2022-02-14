@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="{% static 'js/application.js' %}"></script>
+    <script src="{% static 'js/query_builder.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/application.css' %}"/>
+    <link rel="stylesheet" href="./static/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <script src="{% static 'js/jQuery-v1-9-1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+    
+        </style>
+</head>
+<body>
+
+    <div class="topnav">
+        <a  href="#home" onclick="displayHomediv()">Home</a>
+        <a href="#user" onclick="displayUserdiv()">Users</a>
+        <a href="#query-builder" onclick="displayQueryDiv()">Query Builder</a>
+       
+      </div>
+      
+      <div style="padding-left:10%;width: 80%;">
+
+<div id="welcome-div">
+    <h1>
+        Welcome!
+    </h1>
+</div>
+<div id="users" style="display:none">
+<h2>USER DATA</h2>
+<div id="user-data"></div>
+</div>
+<div id="query-builder" style="display:none">
+    <h2>Query Builder</h2>
+    <div id="query-filters">
+        <div>
+            <div class="table-header-filter">Industry</div>
+            <div class="table-header-filter">
+                <select id="filter-industry" onchange="getQueryResults()">
+                    <option value="none" selected>Select</option>
+                </select>
+            </div>
+            <div>
+                <div class="table-header-filter">
+                    Year Founded
+                </div>
+                <div class="table-header-filter">
+                    <select id="filter-year_founded" onchange="getQueryResults()">
+                        <option value="none" selected>Select</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="table-header-filter">
+                    City
+                </div>
+                <div class="table-header-filter">
+                    <select id="filter-city" onchange="getQueryResults()">
+                        <option value="none" selected>Select</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="table-header-filter">
+                    State
+                </div>
+                <div class="table-header-filter">
+                    <select id="filter-state" onchange="getQueryResults()">
+                        <option value="none" selected>Select</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="table-header-filter">
+                    Country
+                </div>
+                <div class="table-header-filter">
+                    <select id="filter-country" onchange="getQueryResults()">
+                        <option value="none" selected>Select</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+      <button type="button" class="btn btn-primary" onclick="clearFields()" style="position: absolute;right: 15%;">Clear fields</button>
+      <div class="alert alert-success" role="alert" style="display: none;width:60%;padding: 10px;" id="msgDiv">
+        <p id="query-result">
+       </div>
+    </div>
+</div></div>
+
+</body>
+</html>
